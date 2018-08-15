@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1037FF7D21246E1D00A7FBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037FF7C21246E1D00A7FBC4 /* AppDelegate.swift */; };
-		1037FF7F21246E1D00A7FBC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037FF7E21246E1D00A7FBC4 /* ViewController.swift */; };
 		1037FF8221246E1D00A7FBC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8021246E1D00A7FBC4 /* Main.storyboard */; };
 		1037FF8521246E1D00A7FBC4 /* Sismos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1037FF8321246E1D00A7FBC4 /* Sismos.xcdatamodeld */; };
 		1037FF8721246E1F00A7FBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8621246E1F00A7FBC4 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		1037FF7921246E1D00A7FBC4 /* Sismos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sismos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1037FF7C21246E1D00A7FBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1037FF7E21246E1D00A7FBC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1037FF8121246E1D00A7FBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1037FF8421246E1D00A7FBC4 /* Sismos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sismos.xcdatamodel; sourceTree = "<group>"; };
 		1037FF8621246E1F00A7FBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				1037FF7C21246E1D00A7FBC4 /* AppDelegate.swift */,
-				1037FF7E21246E1D00A7FBC4 /* ViewController.swift */,
 				1037FF8021246E1D00A7FBC4 /* Main.storyboard */,
 				1037FF8621246E1F00A7FBC4 /* Assets.xcassets */,
 				1037FF8821246E1F00A7FBC4 /* LaunchScreen.storyboard */,
@@ -139,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1037FF8521246E1D00A7FBC4 /* Sismos.xcdatamodeld in Sources */,
-				1037FF7F21246E1D00A7FBC4 /* ViewController.swift in Sources */,
 				1037FF7D21246E1D00A7FBC4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
