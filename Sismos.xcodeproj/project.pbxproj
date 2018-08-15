@@ -14,6 +14,8 @@
 		1037FF8A21246E1F00A7FBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8821246E1F00A7FBC4 /* LaunchScreen.storyboard */; };
 		10CCAA06212485A90034A57B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA05212485A90034A57B /* SearchViewController.swift */; };
 		10CCAA0821248CC40034A57B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA0721248CC40034A57B /* Reachability.swift */; };
+		10CCAA0A2124931A0034A57B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA092124931A0034A57B /* DetailsViewController.swift */; };
+		10CCAA0C212493290034A57B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA0B212493290034A57B /* ResultsViewController.swift */; };
 		B2E8AD7C8137B8DC6618B3B2 /* Pods_Sismos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		1037FF8B21246E1F00A7FBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10CCAA05212485A90034A57B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		10CCAA0721248CC40034A57B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		10CCAA092124931A0034A57B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		10CCAA0B212493290034A57B /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		3B412F7978A94E4BFB28AF86 /* Pods-Sismos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sismos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sismos/Pods-Sismos.debug.xcconfig"; sourceTree = "<group>"; };
 		C1D1E8A3D4B69826854010EC /* Pods-Sismos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sismos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sismos/Pods-Sismos.release.xcconfig"; sourceTree = "<group>"; };
 		E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sismos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +74,8 @@
 				1037FF8621246E1F00A7FBC4 /* Assets.xcassets */,
 				1037FF8821246E1F00A7FBC4 /* LaunchScreen.storyboard */,
 				10CCAA05212485A90034A57B /* SearchViewController.swift */,
+				10CCAA0B212493290034A57B /* ResultsViewController.swift */,
+				10CCAA092124931A0034A57B /* DetailsViewController.swift */,
 				1037FF8B21246E1F00A7FBC4 /* Info.plist */,
 				1037FF8321246E1D00A7FBC4 /* Sismos.xcdatamodeld */,
 				10CCAA0721248CC40034A57B /* Reachability.swift */,
@@ -212,6 +218,8 @@
 				1037FF8521246E1D00A7FBC4 /* Sismos.xcdatamodeld in Sources */,
 				10CCAA0821248CC40034A57B /* Reachability.swift in Sources */,
 				1037FF7D21246E1D00A7FBC4 /* AppDelegate.swift in Sources */,
+				10CCAA0A2124931A0034A57B /* DetailsViewController.swift in Sources */,
+				10CCAA0C212493290034A57B /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

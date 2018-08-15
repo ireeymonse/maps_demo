@@ -18,6 +18,9 @@ struct SearchParams {
    let fromDate, untilDate: Date
 }
 
+let OneDay: TimeInterval = 24*60*60
+
+
 class SearchViewController: UIViewController {
    
    @IBOutlet weak var lastSearchButton: UIButton!
@@ -31,7 +34,7 @@ class SearchViewController: UIViewController {
       
       fromDatePicker.minimumDate = Date()
       untilDatePicker.minimumDate = Date()
-      untilDatePicker.date = fromDatePicker.date.addingTimeInterval( 24*60*60 )
+      untilDatePicker.date = fromDatePicker.date.addingTimeInterval(OneDay)
    }
    
    override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +48,13 @@ class SearchViewController: UIViewController {
    
    @IBAction func magnitudeStepperChanged(_ sender: Any) {
       magnitudeLabel.text = "\(magnitudeStepper.value)"
+   }
+   
+   @IBAction func fromDateChanged(_ sender: UIDatePicker) {
+      if untilDatePicker.date < sender.date {
+         untilDatePicker.date = sender.date
+      }
+      untilDatePicker.minimumDate = sender.date
    }
    
    @IBAction func lastSearchButtonTapped(_ sender: Any) {
@@ -89,7 +99,11 @@ class SearchViewController: UIViewController {
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       super.prepare(for: segue, sender: sender)
       
-      // FIXME: send params
+      if let results = segue.destination as? ResultsViewController,
+         let params = sender as? SearchParams
+      {
+         results.searchParams = params
+      }
    }
    
 }
