@@ -12,6 +12,9 @@
 		1037FF8521246E1D00A7FBC4 /* Sismos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1037FF8321246E1D00A7FBC4 /* Sismos.xcdatamodeld */; };
 		1037FF8721246E1F00A7FBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8621246E1F00A7FBC4 /* Assets.xcassets */; };
 		1037FF8A21246E1F00A7FBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8821246E1F00A7FBC4 /* LaunchScreen.storyboard */; };
+		10CCAA06212485A90034A57B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA05212485A90034A57B /* SearchViewController.swift */; };
+		10CCAA0821248CC40034A57B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA0721248CC40034A57B /* Reachability.swift */; };
+		B2E8AD7C8137B8DC6618B3B2 /* Pods_Sismos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		1037FF8621246E1F00A7FBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1037FF8921246E1F00A7FBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1037FF8B21246E1F00A7FBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10CCAA05212485A90034A57B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		10CCAA0721248CC40034A57B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		3B412F7978A94E4BFB28AF86 /* Pods-Sismos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sismos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sismos/Pods-Sismos.debug.xcconfig"; sourceTree = "<group>"; };
+		C1D1E8A3D4B69826854010EC /* Pods-Sismos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sismos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sismos/Pods-Sismos.release.xcconfig"; sourceTree = "<group>"; };
+		E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sismos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E8AD7C8137B8DC6618B3B2 /* Pods_Sismos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				1037FF7B21246E1D00A7FBC4 /* Sismos */,
 				1037FF7A21246E1D00A7FBC4 /* Products */,
+				25A5BD4FF4CC82B307AA3A6F /* Pods */,
+				D8662673F29AB60584BE2610 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +69,29 @@
 				1037FF8021246E1D00A7FBC4 /* Main.storyboard */,
 				1037FF8621246E1F00A7FBC4 /* Assets.xcassets */,
 				1037FF8821246E1F00A7FBC4 /* LaunchScreen.storyboard */,
+				10CCAA05212485A90034A57B /* SearchViewController.swift */,
 				1037FF8B21246E1F00A7FBC4 /* Info.plist */,
 				1037FF8321246E1D00A7FBC4 /* Sismos.xcdatamodeld */,
+				10CCAA0721248CC40034A57B /* Reachability.swift */,
 			);
 			path = Sismos;
+			sourceTree = "<group>";
+		};
+		25A5BD4FF4CC82B307AA3A6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B412F7978A94E4BFB28AF86 /* Pods-Sismos.debug.xcconfig */,
+				C1D1E8A3D4B69826854010EC /* Pods-Sismos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8662673F29AB60584BE2610 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1037FF8E21246E1F00A7FBC4 /* Build configuration list for PBXNativeTarget "Sismos" */;
 			buildPhases = (
+				8F911F9364C9E4C37EFA791C /* [CP] Check Pods Manifest.lock */,
 				1037FF7521246E1D00A7FBC4 /* Sources */,
 				1037FF7621246E1D00A7FBC4 /* Frameworks */,
 				1037FF7721246E1D00A7FBC4 /* Resources */,
+				EE8F0175B22D002F511A2019 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +162,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8F911F9364C9E4C37EFA791C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sismos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE8F0175B22D002F511A2019 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sismos/Pods-Sismos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sismos/Pods-Sismos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1037FF7521246E1D00A7FBC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10CCAA06212485A90034A57B /* SearchViewController.swift in Sources */,
 				1037FF8521246E1D00A7FBC4 /* Sismos.xcdatamodeld in Sources */,
+				10CCAA0821248CC40034A57B /* Reachability.swift in Sources */,
 				1037FF7D21246E1D00A7FBC4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,10 +353,12 @@
 		};
 		1037FF8F21246E1F00A7FBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B412F7978A94E4BFB28AF86 /* Pods-Sismos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sismos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,10 +372,12 @@
 		};
 		1037FF9021246E1F00A7FBC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1D1E8A3D4B69826854010EC /* Pods-Sismos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sismos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
