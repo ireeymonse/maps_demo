@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, CLLocationManagerDelegate {
    
    @IBOutlet weak var placeContainerView: UIView!
    @IBOutlet weak var placeLabel: UILabel!
@@ -41,6 +41,28 @@ class DetailsViewController: UIViewController {
       let region = MKCoordinateRegionMakeWithDistance(earthquake.coordinate, 1000, 1000)
       mapView.setRegion(mapView.regionThatFits(region), animated: false)
       mapView.addAnnotation(earthquake)
+      
+      enableLocationServices()
    }
+   
+   
+   // MARK: - Location
+   
+   private let locationManager = CLLocationManager()
+
+   func enableLocationServices() {
+      locationManager.delegate = self
+      locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+      locationManager.requestWhenInUseAuthorization()
+      locationManager.startUpdatingLocation()
+   }
+   
+   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      if let here = mapView.annotations.first(where: { $0 is MKUserLocation }) {
+         mapView.showAnnotations([here, earthquake!], animated: true)
+         manager.stopUpdatingLocation()
+      }
+   }
+   
    
 }

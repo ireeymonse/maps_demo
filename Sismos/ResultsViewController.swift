@@ -96,7 +96,6 @@ class ResultsViewController: UIViewController {
                
             case .success:
                let json = response.result.value as? [String: Any]
-               print(json)
                
                guard let metadata = json?["metadata"] as? [String: Any],
                   Int("\(metadata["status"] ?? "0")") == 200,

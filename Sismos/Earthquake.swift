@@ -26,8 +26,39 @@ class Earthquake: NSObject, MKAnnotation {
       self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
    }
    
-   // MARK: - Map kit
+   // MARK: - MapKit
    
    var coordinate: CLLocationCoordinate2D
    var title: String? { return place }
 }
+
+
+// MARK: - Search
+
+private let kSearchMagnitude = "magnitude?"
+private let kSearchFromDate = "from?"
+private let kSearchUntilDate = "until?"
+
+struct SearchParams {
+   let minMagnitude: Double
+   let fromDate, untilDate: Date
+   
+   static var lastSearch: SearchParams {
+      get {
+         let minMagnitude = UserDefaults.standard.double(forKey: kSearchMagnitude)
+         let from = UserDefaults.standard.double(forKey: kSearchFromDate)
+         let until = UserDefaults.standard.double(forKey: kSearchUntilDate)
+         
+         let fromDate = Date(timeIntervalSinceReferenceDate: from)
+         let untilDate = Date(timeIntervalSinceReferenceDate: until)
+         
+         return SearchParams(minMagnitude: minMagnitude, fromDate: fromDate, untilDate: untilDate)
+      }
+      set(new) {
+         UserDefaults.standard.set(new.minMagnitude, forKey: kSearchMagnitude)
+         UserDefaults.standard.set(new.fromDate.timeIntervalSinceReferenceDate, forKey: kSearchFromDate)
+         UserDefaults.standard.set(new.untilDate.timeIntervalSinceReferenceDate, forKey: kSearchUntilDate)
+      }
+   }
+}
+

@@ -41,5 +41,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Permite mostrar tu ubicación relativa al sismo.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Permite mostrar tu ubicación relativa al sismo.</string>
+   <key>NSLocationWhenInUseUsageDescription</key>
+   <string>Permite mostrar tu ubicación relativa al sismo.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Permite mostrar tu ubicación relativa al sismo.</string>
 </dict>
 </plist>

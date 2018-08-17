@@ -9,17 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-let kSearchMagnitude = "magnitude?"
-let kSearchFromDate = "from?"
-let kSearchUntilDate = "until?"
-
-struct SearchParams {
-   let minMagnitude: Double
-   let fromDate, untilDate: Date
-}
-
 let OneDay: TimeInterval = 24*60*60
-
 
 class SearchViewController: UIViewController {
    
@@ -32,22 +22,22 @@ class SearchViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      fromDatePicker.minimumDate = Date()
-      untilDatePicker.minimumDate = Date()
-      untilDatePicker.date = fromDatePicker.date.addingTimeInterval(OneDay)
+      fromDatePicker.maximumDate = Date()
+      untilDatePicker.minimumDate = fromDatePicker.date
+      untilDatePicker.maximumDate = Date()
    }
    
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       
-      lastSearchButton.isEnabled = (UserDefaults.standard.double(forKey: kSearchMagnitude) != 0)
+      lastSearchButton.isEnabled = (SearchParams.lastSearch.minMagnitude > 0)
    }
    
    
    // MARK: - UI events
    
    @IBAction func magnitudeStepperChanged(_ sender: Any) {
-      magnitudeLabel.text = "\(magnitudeStepper.value)"
+      magnitudeLabel.text = String(format: "%.1f", magnitudeStepper.value)
    }
    
    @IBAction func fromDateChanged(_ sender: UIDatePicker) {
@@ -58,39 +48,30 @@ class SearchViewController: UIViewController {
    }
    
    @IBAction func lastSearchButtonTapped(_ sender: Any) {
-      let minMagnitude = UserDefaults.standard.double(forKey: kSearchMagnitude)
-      let from = UserDefaults.standard.double(forKey: kSearchFromDate)
-      let until = UserDefaults.standard.double(forKey: kSearchUntilDate)
-      
-      guard minMagnitude > 0 else {
+      let params = SearchParams.lastSearch
+      guard params.minMagnitude > 0 else {
          // FIXME: handle error?
          return
       }
-      let fromDate = Date(timeIntervalSinceReferenceDate: from)
-      let untilDate = Date(timeIntervalSinceReferenceDate: until)
-      
-      search(minMagnitude, fromDate, untilDate)
+      search(for: params)
    }
    
    @IBAction func newSearchButtonTapped(_ sender: Any) {
-      search(magnitudeStepper.value, fromDatePicker.date, untilDatePicker.date)
+      let params = SearchParams(minMagnitude: magnitudeStepper.value,
+                                fromDate: fromDatePicker.date,
+                                untilDate: untilDatePicker.date)
+      search(for: params)
    }
    
-   private func search(_ minMagnitude: Double, _ fromDate: Date, _ untilDate: Date) {
+   private func search(for params: SearchParams) {
       guard Reachability.isConnectedToNetwork() else {
          SVProgressHUD.showError(withStatus: "Conexión no disponible")
          return
       }
-      
-      let params = SearchParams(minMagnitude: minMagnitude,
-                                fromDate: fromDate,
-                                untilDate: untilDate)
       performSegue(withIdentifier: "results", sender: params)
       
       // save search
-      UserDefaults.standard.set(minMagnitude, forKey: kSearchMagnitude)
-      UserDefaults.standard.set(fromDate.timeIntervalSinceReferenceDate, forKey: kSearchFromDate)
-      UserDefaults.standard.set(untilDate.timeIntervalSinceReferenceDate, forKey: kSearchUntilDate)
+      SearchParams.lastSearch = params
    }
    
    
