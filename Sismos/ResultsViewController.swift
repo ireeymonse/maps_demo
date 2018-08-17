@@ -34,7 +34,7 @@ class ResultsViewController: UIViewController {
       // ui config
       datesLabel.text = "Del \(formatter.string(from: params.fromDate)) al \(formatter.string(from: params.untilDate))"
       
-      magnitudeLabel.text = "Magnitud ≥ \(params.minMagnitude)"
+      magnitudeLabel.text = String(format: "Magnitud ≥ %.1f", params.minMagnitude)
       
       refreshControl.endRefreshing()
       refreshControl.tintColor = #colorLiteral(red: 0.9494900174, green: 0.4276204102, blue: 0, alpha: 1)
