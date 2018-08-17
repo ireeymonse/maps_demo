@@ -473,6 +473,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="odQ-MK-SPh" id="37t-u0-n3r"/>
                         <outlet property="magnitudeLabel" destination="Xfn-hj-Eey" id="kGP-L6-kzf"/>
+                        <outlet property="mapView" destination="sJ4-ZT-KmX" id="fRJ-qd-Bva"/>
                         <outlet property="placeContainerView" destination="Jl0-W5-STO" id="tfm-cv-FeF"/>
                         <outlet property="placeLabel" destination="C6A-0V-K6h" id="biL-s4-M90"/>
                     </connections>

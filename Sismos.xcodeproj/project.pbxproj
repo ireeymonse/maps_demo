@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		1037FF7D21246E1D00A7FBC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037FF7C21246E1D00A7FBC4 /* AppDelegate.swift */; };
 		1037FF8221246E1D00A7FBC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8021246E1D00A7FBC4 /* Main.storyboard */; };
-		1037FF8521246E1D00A7FBC4 /* Sismos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1037FF8321246E1D00A7FBC4 /* Sismos.xcdatamodeld */; };
 		1037FF8721246E1F00A7FBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8621246E1F00A7FBC4 /* Assets.xcassets */; };
 		1037FF8A21246E1F00A7FBC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1037FF8821246E1F00A7FBC4 /* LaunchScreen.storyboard */; };
+		105C3CC42124BC2200706BB3 /* Earthquake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C3CC32124BC2200706BB3 /* Earthquake.swift */; };
 		10CCAA06212485A90034A57B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA05212485A90034A57B /* SearchViewController.swift */; };
 		10CCAA0821248CC40034A57B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA0721248CC40034A57B /* Reachability.swift */; };
 		10CCAA0A2124931A0034A57B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA092124931A0034A57B /* DetailsViewController.swift */; };
 		10CCAA0C212493290034A57B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCAA0B212493290034A57B /* ResultsViewController.swift */; };
+		10E84AF42124BA8A00E6304B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E84AF32124BA8A00E6304B /* MapKit.framework */; };
 		B2E8AD7C8137B8DC6618B3B2 /* Pods_Sismos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,14 +24,15 @@
 		1037FF7921246E1D00A7FBC4 /* Sismos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sismos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1037FF7C21246E1D00A7FBC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1037FF8121246E1D00A7FBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1037FF8421246E1D00A7FBC4 /* Sismos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sismos.xcdatamodel; sourceTree = "<group>"; };
 		1037FF8621246E1F00A7FBC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1037FF8921246E1F00A7FBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1037FF8B21246E1F00A7FBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105C3CC32124BC2200706BB3 /* Earthquake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
 		10CCAA05212485A90034A57B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		10CCAA0721248CC40034A57B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		10CCAA092124931A0034A57B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		10CCAA0B212493290034A57B /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		10E84AF32124BA8A00E6304B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3B412F7978A94E4BFB28AF86 /* Pods-Sismos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sismos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sismos/Pods-Sismos.debug.xcconfig"; sourceTree = "<group>"; };
 		C1D1E8A3D4B69826854010EC /* Pods-Sismos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sismos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sismos/Pods-Sismos.release.xcconfig"; sourceTree = "<group>"; };
 		E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sismos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E84AF42124BA8A00E6304B /* MapKit.framework in Frameworks */,
 				B2E8AD7C8137B8DC6618B3B2 /* Pods_Sismos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,14 +76,38 @@
 				1037FF8021246E1D00A7FBC4 /* Main.storyboard */,
 				1037FF8621246E1F00A7FBC4 /* Assets.xcassets */,
 				1037FF8821246E1F00A7FBC4 /* LaunchScreen.storyboard */,
+				105C3CC22124BC0700706BB3 /* Model */,
+				10E84AF52124BAD500E6304B /* Controllers */,
+				10E84AF82124BB0400E6304B /* Other */,
+			);
+			path = Sismos;
+			sourceTree = "<group>";
+		};
+		105C3CC22124BC0700706BB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				105C3CC32124BC2200706BB3 /* Earthquake.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		10E84AF52124BAD500E6304B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				10CCAA05212485A90034A57B /* SearchViewController.swift */,
 				10CCAA0B212493290034A57B /* ResultsViewController.swift */,
 				10CCAA092124931A0034A57B /* DetailsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		10E84AF82124BB0400E6304B /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				1037FF8B21246E1F00A7FBC4 /* Info.plist */,
-				1037FF8321246E1D00A7FBC4 /* Sismos.xcdatamodeld */,
 				10CCAA0721248CC40034A57B /* Reachability.swift */,
 			);
-			path = Sismos;
+			name = Other;
 			sourceTree = "<group>";
 		};
 		25A5BD4FF4CC82B307AA3A6F /* Pods */ = {
@@ -95,6 +122,7 @@
 		D8662673F29AB60584BE2610 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10E84AF32124BA8A00E6304B /* MapKit.framework */,
 				E506DC77A680E99CDAAEAEEE /* Pods_Sismos.framework */,
 			);
 			name = Frameworks;
@@ -134,6 +162,11 @@
 				TargetAttributes = {
 					1037FF7821246E1D00A7FBC4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -215,10 +248,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				10CCAA06212485A90034A57B /* SearchViewController.swift in Sources */,
-				1037FF8521246E1D00A7FBC4 /* Sismos.xcdatamodeld in Sources */,
 				10CCAA0821248CC40034A57B /* Reachability.swift in Sources */,
 				1037FF7D21246E1D00A7FBC4 /* AppDelegate.swift in Sources */,
 				10CCAA0A2124931A0034A57B /* DetailsViewController.swift in Sources */,
+				105C3CC42124BC2200706BB3 /* Earthquake.swift in Sources */,
 				10CCAA0C212493290034A57B /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33KNHRG5VB;
 				INFOPLIST_FILE = Sismos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 33KNHRG5VB;
 				INFOPLIST_FILE = Sismos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -419,19 +454,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1037FF8321246E1D00A7FBC4 /* Sismos.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1037FF8421246E1D00A7FBC4 /* Sismos.xcdatamodel */,
-			);
-			currentVersion = 1037FF8421246E1D00A7FBC4 /* Sismos.xcdatamodel */;
-			path = Sismos.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1037FF7121246E1D00A7FBC4 /* Project object */;
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DetailsViewController: UIViewController {
    
@@ -14,6 +15,7 @@ class DetailsViewController: UIViewController {
    @IBOutlet weak var placeLabel: UILabel!
    @IBOutlet weak var magnitudeLabel: UILabel!
    @IBOutlet weak var dateLabel: UILabel!
+   @IBOutlet weak var mapView: MKMapView!
    
    lazy var formatter: DateFormatter = {
       let f = DateFormatter()
@@ -31,12 +33,14 @@ class DetailsViewController: UIViewController {
       
       placeLabel.text = earthquake.place
       magnitudeLabel.text = String(format: "%.1f", mag)
-      dateLabel.text = formatter.string(from: earthquake.date!)
+      dateLabel.text = formatter.string(from: earthquake.date)
       
-      placeContainerView.backgroundColor =
-         mag < 4 ? #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1) : mag < 6 ? #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1) : mag < 7 ? #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1) : #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+      placeContainerView.backgroundColor = earthquake.color
+      
+      // show point in map
+      let region = MKCoordinateRegionMakeWithDistance(earthquake.coordinate, 1000, 1000)
+      mapView.setRegion(mapView.regionThatFits(region), animated: false)
+      mapView.addAnnotation(earthquake)
    }
-   
-   // FIXME: map view
    
 }

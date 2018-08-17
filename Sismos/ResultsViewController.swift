@@ -110,18 +110,27 @@ class ResultsViewController: UIViewController {
                
                // get result
                let result: [Earthquake] = body.compactMap {
-                  guard let info = $0 as? [String : AnyObject], let properties = info["properties"] as? [String: Any] else {
+                  
+                  // properties
+                  guard let info = $0 as? [String : AnyObject],
+                     let properties = info["properties"] as? [String: Any],
+                     let t = properties["time"] as? Double else
+                     {
+                        return nil
+                  }
+                  
+                  // vaidate geometry
+                  guard let geo = info["geometry"] as? [String: Any],
+                     geo["type"] as? String == "Point",
+                     let coordinates = geo["coordinates"] as? [Double] else
+                  {
                      return nil
                   }
                   
-                  let new = Earthquake()
-                  new.place = properties["place"] as? String
-                  new.magnitude = properties["mag"] as? Double
-                  
-                  let t = (properties["time"] as? Double ?? 0) / 1000
-                  new.date = Date(timeIntervalSince1970: t)
-                  
-                  return new
+                  return Earthquake(place: properties["place"] as? String,
+                                    magnitude: properties["mag"] as? Double,
+                                    date: Date(timeIntervalSince1970: t / 1000),
+                                    lat: coordinates[1], lon: coordinates[0])
                }
                completion(nil, result)
             }
@@ -144,14 +153,6 @@ class ResultsViewController: UIViewController {
    
 }
 
-// MARK: -
-
-class Earthquake {
-   var place: String?
-   var magnitude: Double?
-   var date: Date?
-}
-
 
 // MARK: -
 
@@ -162,8 +163,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      tableView.deselectRow(at: indexPath, animated: true)
-      
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultCell
      
       let earthquake = results[indexPath.row]
@@ -171,12 +170,15 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
       
       cell.placeLabel.text = earthquake.place
       cell.magnitudeLabel.text = String(format: "%.1f", mag)
-      cell.dateLabel.text = formatter.string(from: earthquake.date!)
+      cell.dateLabel.text = formatter.string(from: earthquake.date)
       
-      cell.placeContainerView.backgroundColor =
-         mag < 4 ? #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1) : mag < 6 ? #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1) : mag < 7 ? #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1) : #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+      cell.placeContainerView.backgroundColor = earthquake.color
       
       return cell
+   }
+   
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
    }
 }
 
